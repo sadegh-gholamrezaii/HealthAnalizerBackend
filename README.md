@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <div class="group">
   <h2>Group members:</h2>
   <ul>
@@ -17,3 +18,4 @@ acfdbb9e9d0e1be2c68dc2481bb736ba07189035640a758394ef83a155b8d5d7
  alt="icon" data-canonical-src="https://techstack-generator.vercel.app/django-icon.svg"
  style="max-width: 100%;" width="65" height="65">
 
+</html>
