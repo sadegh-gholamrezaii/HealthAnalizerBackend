@@ -3,7 +3,25 @@ from health_analyzer.health_analyzer import settings
  
 '''
 Hello
-To start the database of this project, you can proceed as follows:
+A)  To start the virtual environment ,
+    After cloning the repository,
+    enter the "HealthAnalizerBackend" folder,
+    open CMD and enter the following commands:
+1.      pip install virtualenv
+2.      virtualenv name_of_env
+
+Then set the values  <-- :
+'''
+
+project_path = "C:\\Users\\sad\\Desktop\\az_narm\\HealthAnalizerBackend"  # <-- 
+
+name_of_env = ""  # <--
+
+python_exe_path = f"{project_path}\\{name_of_env}\\Scripts\\python.exe"
+
+
+'''
+B)  To start the database of this project, you can proceed as follows:
 1. First install PostgreSQL    (https://www.postgresql.org/download/)
 
 2. Open CMD and enter the following command:
@@ -23,31 +41,29 @@ If the psql command is not recognized, check the environment variable.
 You can make sure you did it right with the following command:
         postgres=#  \l
 
-Then Enter the values in settings.DATABASES .
+Then Enter the values in settings.DATABASES:   <-- .
 '''
 
 settings.DATABASES ={
     'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': '',
-    'USER': '',
-    'PASSWORD': '',
+    'NAME': '',     # <--
+    'USER': '',     # <--
+    'PASSWORD': '', # <--
     'HOST': '127.0.0.1',
     'PORT': '5432',
       }
 } 
  
 process = None
-project_path = "C:\\Users\\sad\\Desktop\\AZnarm\\HealthAnalizerBackend"
-
 
 # list of commands
 commands = [
-    project_path+'\\main_set\\Scripts\\activate',
+    f'{project_path}\\{name_of_env}\\Scripts\\activate',
     f'pip install -r {project_path}\\requirements.txt',
-    f'{project_path}\\main_set\\Scripts\\python.exe {project_path}\\health_analyzer\\manage.py makemigrations',
-    f'{project_path}\\main_set\\Scripts\\python.exe {project_path}\\health_analyzer\\manage.py migrate',
-    f'{project_path}\\main_set\\Scripts\\python.exe {project_path}\\health_analyzer\\manage.py runserver',
+    f'{python_exe_path} {project_path}\\health_analyzer\\manage.py makemigrations',
+    f'{python_exe_path} {project_path}\\health_analyzer\\manage.py migrate',
+    f'{python_exe_path} {project_path}\\health_analyzer\\manage.py runserver',
     
 ]
 
