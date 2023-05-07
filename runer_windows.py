@@ -1,6 +1,5 @@
 import subprocess
-from health_analyzer.health_analyzer import settings
- 
+
 '''
 Hello
 A)  To start the virtual environment ,
@@ -13,11 +12,11 @@ A)  To start the virtual environment ,
 Then set the values  <-- :
 '''
 
-project_path = "C:\\Users\\sad\\Desktop\\az_narm\\HealthAnalizerBackend"  # <-- 
+project_path = r"C:\Users\sad\Desktop\az_narm\HealthAnalizerBackend"  # <--    change it
 
-name_of_env = ""  # <--
+name_of_env = "name_of_env"  # <-- change it
 
-python_exe_path = f"{project_path}\\{name_of_env}\\Scripts\\python.exe"
+Scripts_Path = f"{project_path}\\{name_of_env}\\Scripts"
 
 
 '''
@@ -41,34 +40,35 @@ If the psql command is not recognized, check the environment variable.
 You can make sure you did it right with the following command:
         postgres=#  \l
 
-Then Enter the values in settings.DATABASES:   <-- .
+Then go to:
+        health_analyzer > health_analyzer > settings.py
+and set the DATABASES values :  (<--)
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'NAME': '',     # <--
+                'USER': '',     # <--
+                'PASSWORD': '', # <--
+                'HOST': '127.0.0.1',
+                'PORT': '5432',
+            }   
+        }
+           
 '''
 
-settings.DATABASES ={
-    'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': '',     # <--
-    'USER': '',     # <--
-    'PASSWORD': '', # <--
-    'HOST': '127.0.0.1',
-    'PORT': '5432',
-      }
-} 
- 
 process = None
 
 # list of commands
 commands = [
-    f'{project_path}\\{name_of_env}\\Scripts\\activate',
-    f'pip install -r {project_path}\\requirements.txt',
-    f'{python_exe_path} {project_path}\\health_analyzer\\manage.py makemigrations',
-    f'{python_exe_path} {project_path}\\health_analyzer\\manage.py migrate',
-    f'{python_exe_path} {project_path}\\health_analyzer\\manage.py runserver',
+    f'{Scripts_Path}\\pip install -r {project_path}\\requirements.txt',
+    f'{Scripts_Path}\\python.exe {project_path}\\health_analyzer\\manage.py makemigrations',
+    f'{Scripts_Path}\\python.exe {project_path}\\health_analyzer\\manage.py migrate',
+    f'{Scripts_Path}\\python.exe {project_path}\\health_analyzer\\manage.py runserver',
     
 ]
 
 # exe
 for cmd in commands:
-    process = subprocess.Popen(cmd, shell=True)
+    process = subprocess.run(cmd, shell=True)
 
 #process.send_signal(subprocess.signal.CTRL_C_EVENT)    #stop with ctrl+c
