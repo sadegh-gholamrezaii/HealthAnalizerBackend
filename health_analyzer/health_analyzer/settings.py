@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Accounts_app',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'health_analyzer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath("Accounts_app"))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,9 +85,9 @@ DATABASES = {
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': '',
-    'USER': '',
-    'PASSWORD': '',
+    'NAME': 'test',
+    'USER': 'sad2',
+    'PASSWORD': '134679',
     'HOST': '127.0.0.1',
     'PORT': '5432',
       }
