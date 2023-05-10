@@ -13,11 +13,12 @@
 <h3>backend with:<h3>
 
 <div style="position: relative; width: 65px; height: 65px;">
-  <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="65" height="65" style="position: absolute; top: 0; left: 0;" />
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid black; box-sizing: border-box;"></div>
+  <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="65" height="65" style="position: absolute; top:0; left:0;" />
 </div>
 <br>
 <br>
+
+
 
 ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=073E3D00&width=435&lines=DATABASE+%3A;)
 ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=073E3D00&width=435&lines=.........PostgreSQL)
@@ -26,6 +27,8 @@
 <!--<pre>      postgresql</pre>-->
 
 
+<br>
+<br>
 | Contributors | role |  
 | :---         |     :---:      |
 |[Ganjei]()|| 
