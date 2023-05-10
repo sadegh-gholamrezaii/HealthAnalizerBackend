@@ -21,8 +21,7 @@
 
 
 
-![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=073E3D00&width=435&lines=DATABASE+%3A;)
-![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=073E3D00&width=435&lines=.........PostgreSQL)
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=073E3D00&width=435&lines=DATABASE = PostgreSQL+%3A;)
 
 <!--<h3>DATABASE : <h3>-->
 <!--<pre>      postgresql</pre>-->
