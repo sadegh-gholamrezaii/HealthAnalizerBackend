@@ -9,12 +9,13 @@
     <li>Sadegh Gholamrezaie</li>
   </ul>
 </div>
+
+
 <br>
 <h3>backend with:<h3>
 
-<div style="position: relative; width: 65px; height: 65px;">
-  <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="65" height="65" style="position: absolute; top:0; left:0;" />
-</div>
+<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="65" height="65" /></div>
+  
 <br>
 <br>
 
@@ -29,6 +30,7 @@
 
 <br>
 <br>
+  
 | Contributors | role |  
 | :---         |     :---:      |
 |[Ganjei]()|| 
