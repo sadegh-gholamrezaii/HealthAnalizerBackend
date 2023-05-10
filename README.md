@@ -11,7 +11,11 @@
 </div>
 <br>
 <h3>backend with:<h3>
-<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="65" height="65" /></div>
+
+<div style="position: relative; width: 65px; height: 65px;">
+  <img src="https://techstack-generator.vercel.app/django-icon.svg" alt="icon" width="65" height="65" style="position: absolute; top: 0; left: 0;" />
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid black; box-sizing: border-box;"></div>
+</div>
 <br>
 <br>
 
@@ -20,3 +24,12 @@
 
 <!--<h3>DATABASE : <h3>-->
 <!--<pre>      postgresql</pre>-->
+
+
+| Contributors | role |  
+| :---         |     :---:      |
+|[Ganjei]()|| 
+|[Majid Saberi](https://github.com/saberimajid78)||
+|[Mohammad Hakimi]()||
+|[Salar Keshavarzi](https://github.com/SalarKesha)||
+|[Sadegh Gholamrezaie](https://github.com/sadegh-gholamrezaii)||
