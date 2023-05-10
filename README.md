@@ -20,8 +20,7 @@
 <br>
 
 
-
-![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=073E3D00&width=435&lines=DATABASE :  PostgreSQL+%3A;)
+ [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=DATABASE+%3D+PostgreSQL)](https://git.io/typing-svg) 
 
 <!--<h3>DATABASE : <h3>-->
 <!--<pre>      postgresql</pre>-->
