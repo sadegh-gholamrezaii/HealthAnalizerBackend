@@ -31,7 +31,7 @@
   
 | Contributors | role |  
 | :---         |     :---:      |
-|[Ganjei]()|| 
+|[Saeed Ganjei]()|| 
 |[Majid Saberi](https://github.com/saberimajid78)||
 |[Mohammad Hakimi]()||
 |[Salar Keshavarzi](https://github.com/SalarKesha)||
