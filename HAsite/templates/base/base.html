@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+    {% block style %}{% endblock %}
+</head>
+<body class="body" id="body">
+<div class="alert-container" id="alert-container">
+    {% if messages %}
+        {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+{% if request.user.is_authenticated %}
+    <h2>{{ user.username }}</h2>
+{% endif %}
+{% block content %}
+    content here..
+{% endblock %}
+</body>
+</html>
