@@ -10,6 +10,10 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
+            user = CustomUser.objects.filter(username=cd['Email']).first()
+            if user:
+                messages.error(request, 'Someone has registered with this email', 'error')
+                return redirect('register')
             try:
                 user = CustomUser.objects.create_user(username=cd['Email'], password=cd['Password'])
                 messages.success(request, 'Successfully Registration', 'success')
