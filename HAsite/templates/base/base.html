@@ -14,7 +14,10 @@
     {% endif %}
 </div>
 {% if request.user.is_authenticated %}
-    <h2>{{ user.username }}</h2>
+    <h2>{{ user.username }}<a href="{% url 'logout' %}"><button>logout</button></a></h2>
+    {% else %}
+    <a href="{% url 'login' %}"><button>login</button></a>
+    <a href="{% url 'register' %}"><button>signup</button></a>
 {% endif %}
 {% block content %}
     content here..
