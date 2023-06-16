@@ -95,11 +95,11 @@ def forget_password(request):
 
 def home(request):
     if request.user.is_authenticated:
-        user = request.user
-        bmi_list = Bmi.objects.all().order_by('-created_time')
-        bmr_list = Bmr.objects.all().order_by('-created_time')
-        whr_list = Whr.objects.all().order_by('-created_time')
-        bfp_list = Bfp.objects.all().order_by('-created_time')
+        user = CustomUser.objects.get(username=request.user.username)
+        bmi_list = user.bmis.all().order_by('-created_time')
+        bmr_list = user.bmrs.all().order_by('-created_time')
+        whr_list = user.whrs.all().order_by('-created_time')
+        bfp_list = user.bfps.all().order_by('-created_time')
     else:
         user = None
         bmi_list = None
