@@ -1,4 +1,246 @@
 {% extends 'base/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'account/style/index.css' %}">
+
+{% endblock %}
 {% block content %}
-    <h1>Home Page..</h1>
+    <header class="header">
+        <img class="logo" src="{% static 'account/images/health-analyzer-logo.png' %}" alt="logo">
+    </header>
+    <main class="main">
+        <div class="section-container">
+            <section class="section" id="BMI">
+                <h3>BMI</h3>
+                <form action="" method="post" class="bmi-form">
+                    {% csrf_token %}
+
+                    <div class="bmi-container">
+                        <label for="bmi-weight">weight (kg):</label>
+                        <input type="text" name="bmi-weight" id="bmi-weight">
+                        <label for="bmi-height">height (cm):</label>
+                        <input type="text" name="bmi-height" id="bmi-height">
+                    </div>
+                    {% if bmi %}
+                        <input type="submit" class="sec-submit" value="{{ bmi }}">
+                    {% else %}
+                        <input type="submit" class="sec-submit" value="Calculate">
+                    {% endif %}
+                </form>
+                <div class="desc">&#9900
+                    BMI is a number calculated from a person's weight and height. BMI provides a fairly reliable
+                    indicator
+                    of body fatness for most people and is used to screen for weight categories that may lead to health
+                    problems.
+                </div>
+            </section>
+            <section class="section" id="BMR">
+                <h3>BMR</h3>
+                <form action="" method="post" class="bmr-form">
+                    {% csrf_token %}
+
+                    <div class="bmr-container">
+                        <label for="bmr-age">age (year):</label>
+                        <input type="text" name="bmr-age" id="bmr-age">
+
+                        <label for="bmr-weight">weight (kg):</label>
+                        <input type="text" name="bmr-weight" id="bmr-weight">
+
+                        <label for="bmr-height">height (cm):</label>
+                        <input type="text" name="bmr-height" id="bmr-height">
+
+                        <div class="gender-container">
+                            <div>
+                                <label for="bmr-female">Female</label>
+                                <input type="radio" name="bmr-gender" id="bmr-female" value="female">
+                            </div>
+                            <div>
+                                <label for="bmr-male">Male</label>
+                                <input type="radio" name="bmr-gender" id="bmr-male" value="male">
+                            </div>
+                        </div>
+                    </div>
+                    {% if bmr %}
+                        <input type="submit" class="sec-submit" value="{{ bmr }}">
+                    {% else %}
+                        <input type="submit" class="sec-submit" value="Calculate">
+                    {% endif %}
+                </form>
+                <div class="desc">&#9900
+                    The BMR refers to the amount of energy your body needs to maintain homeostasis. Your BMR is largely
+                    determined by your total lean mass, especially muscle mass, because lean mass requires a lot of
+                    energy
+                    to maintain. Anything that reduces lean mass will reduce your BMR.
+                </div>
+
+            </section>
+            <section class="section" id="WHR">
+                <h3>WHR</h3>
+                <form action="" method="post" class="whr-form">
+                    {% csrf_token %}
+
+                    <div class="whr-container">
+                        <label for="whr-waist">waist (cm):</label>
+                        <input type="text" name="whr-waist" id="whr-waist">
+
+                        <label for="whr-hip">hip (cm):</label>
+                        <input type="text" name="whr-hip" id="whr-hip">
+                        <div class="gender-container">
+                            <div>
+                                <label for="whr-female">Female</label>
+                                <input type="radio" name="whr-gender" id="whr-female" value="female">
+                            </div>
+                            <div>
+                                <label for="whr-male">Male</label>
+                                <input type="radio" name="whr-gender" id="whr-male" value="male">
+                            </div>
+                        </div>
+                    </div>
+                    {% if whr %}
+                        <input type="submit" class="sec-submit" value="{{ whr }}">
+                    {% else %}
+                        <input type="submit" class="sec-submit" value="Calculate">
+                    {% endif %}
+                </form>
+                <div class="desc">&#9900
+                    The waist-to-hip ratio (WHR) is a quick measure of fat distribution that may help indicate a
+                    person's
+                    overall health. People who carry more weight around their middle than their hips may be at a higher
+                    risk
+                    of developing certain health conditions.
+                </div>
+            </section>
+            <section class="section" id="BFP">
+                <h3>BFP</h3>
+                <form action="" method="post" class="bfp-form">
+                    {% csrf_token %}
+
+                    <div class="bfp-container">
+                        {#                    <div>#}
+                        {#                        <label for="bfp-age">age (year):</label>#}
+                        {#                        <input type="text" name="bfp-age" id="bfp-age">#}
+                        {#                    </div>#}
+                        {#                    <div>#}
+                        {#                        <label for="bfp-weight">weight (kg):</label>#}
+                        {#                        <input type="text" name="bfp-weight" id="bfp-weight">#}
+                        {#                    </div>#}
+                        <div>
+                            <label for="bfp-height">height (cm):</label>
+                            <input type="text" name="bfp-height" id="bfp-height">
+                        </div>
+                        <div>
+                            <label for="bfp-neck">neck (cm):</label>
+                            <input type="text" name="bfp-neck" id="bfp-neck">
+                        </div>
+                        <div>
+                            <label for="bfp-waist">waist (cm):</label>
+                            <input type="text" name="bfp-waist" id="bfp-waist">
+                        </div>
+                        <div>
+                            <label for="bfp-hip">hip (cm):</label>
+                            <input type="text" name="bfp-hip" id="bfp-hip">
+                        </div>
+                        <div class="gender-container">
+                            <div>
+                                <label for="bfp-female">Female</label>
+                                <input type="radio" name="bfp-gender" id="bfp-female" value="female">
+                            </div>
+                            <div>
+                                <label for="bfp-male">Male</label>
+                                <input type="radio" name="bfp-gender" id="bfp-male" value="male">
+                            </div>
+                        </div>
+                    </div>
+                    {% if bfp %}
+                        <input type="submit" class="sec-submit" value="{{ bfp }}">
+                    {% else %}
+                        <input type="submit" class="sec-submit" value="Calculate">
+                    {% endif %}
+                </form>
+                <div class="desc">&#9900
+                    Body fat includes essential body fat and storage body fat. Essential body fat is a base level of fat
+                    that is found in most parts of the body. It is necessary fat that maintains life and reproductive
+                    functions. The amount of essential fat differs between men and women, and is typically around 2-5%
+                    in
+                    men, and 10-13% in women.
+                </div>
+
+            </section>
+        </div>
+        {% if user %}
+            <div class="history" id="history">
+                <p class="history-caption">History:</p>
+                {% if bmi_list %}
+                    <ul class="bmi-log">
+                        <p class="ul-caption">BMI &#8628;</p>
+                        {% for bmi in bmi_list %}
+                            <li class="tooltip">
+                                &#9657; {{ bmi.result }} <span class="date">{{ bmi.created_time }}</span>
+                                <span class="tooltiptext">height: {{ bmi.height }}(cm), weight: {{ bmi.weight }}(kg)</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if bmr_list %}
+                    <ul class="bmr-log">
+                        <p class="ul-caption">BMR &#8628;</p>
+
+                        {% for bmr in bmr_list %}
+                            <li class="tooltip">
+                                &#9657; {{ bmr.result }} <span class="date">{{ bmr.created_time }}</span>
+                                <span class="tooltiptext">
+                                    age: {{ bmr.age }}, height: {{ bmr.height }}(cm), weight: {{ bmr.weight }}(kg),
+                                    {% if bmr.gender == 1 %}
+                                    gender: male
+                                    {% else %}
+                                    gender: female
+                                    {% endif %}
+                                </span>
+
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if whr_list %}
+                    <ul class="whr-log">
+                        <p class="ul-caption">WHR &#8628;</p>
+
+                        {% for whr in whr_list %}
+                            <li class="tooltip">
+                                &#9657; {{ whr.result }} <span class="date">{{ whr.created_time }}</span>
+                            <span class="tooltiptext">
+                                    waist: {{ whr.waist }}(cm), hip: {{ whr.hip }}(cm),
+                                    {% if whr.gender == 1 %}
+                                    gender: male
+                                    {% else %}
+                                    gender: female
+                                    {% endif %}
+                                </span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if bfp_list %}
+                    <ul class="bfp-log">
+                        <p class="ul-caption">BFP &#8628;</p>
+
+                        {% for bfp in bfp_list %}
+                            <li class="tooltip">
+                                &#9657; {{ bfp.result }} <span class="date">{{ bfp.created_time }}</span>
+                            <span class="tooltiptext">
+                                    height: {{ bfp.height }}(cm), neck: {{ bfp.neck }}(cm), waist: {{ bfp.waist }}(cm), hip: {{ hip }}(cm)
+                                    {% if bfp.gender == 1 %}
+                                    gender: male
+                                    {% else %}
+                                    gender: female
+                                    {% endif %}
+                                </span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endif %}
+    </main>
+
 {% endblock %}

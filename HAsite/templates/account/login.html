@@ -1,10 +1,16 @@
 {% extends 'base/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'account/style/auth.css' %}">
+{% endblock %}
 {% block content %}
-<form action="" method="post">
+    <div class="form-container">
+<form action="" method="post" class="login-form">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="login">
+    <input type="submit" value="Login" class="submit">
 </form>
-    <a href="{% url 'register' %}">register</a>
-    <a href="{% url 'forget_password' %}">forget password</a>
+    <a href="{% url 'register' %}">Signup</a><span style="color: #000000"> | </span>
+    <a href="{% url 'forget_password' %}">Forget Password!</a>
+    </div>
 {% endblock %}

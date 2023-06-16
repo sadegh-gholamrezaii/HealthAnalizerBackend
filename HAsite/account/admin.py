@@ -3,7 +3,7 @@ from django.contrib.admin import register
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext, gettext_lazy as _
 
-from account.models import CustomUser
+from account.models import CustomUser, Bmi, Bmr, Whr, Bfp
 
 
 @register(CustomUser)
@@ -23,3 +23,23 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('username', 'type', 'password1', 'password2'),
         }),
     )
+
+
+@register(Bmi)
+class BmiAdmin(admin.ModelAdmin):
+    list_display = ['user', 'weight', 'height', 'created_time']
+
+
+@register(Bmr)
+class BmrAdmin(admin.ModelAdmin):
+    list_display = ['user', 'age', 'weight', 'height', 'gender', 'created_time']
+
+
+@register(Whr)
+class BmrAdmin(admin.ModelAdmin):
+    list_display = ['user', 'waist', 'hip', 'gender', 'created_time']
+
+
+@register(Bfp)
+class BmrAdmin(admin.ModelAdmin):
+    list_display = ['user', 'neck', 'waist', 'height', 'hip', 'gender', 'created_time']

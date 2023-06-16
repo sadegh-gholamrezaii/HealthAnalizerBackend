@@ -1,26 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'account/style/css-reset.css' %}">
+    <link rel="stylesheet" href="{% static 'account/style/base.css' %}">
+    <script src="{% static 'account/style/jquery.min.js' %}"></script>
+
     {% block style %}{% endblock %}
 </head>
 <body class="body" id="body">
-<div class="alert-container" id="alert-container">
+<div class="alert-container show-alert" id="alert-container" onclick="delalert()">
     {% if messages %}
         {% for message in messages %}
-                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
         {% endfor %}
     {% endif %}
 </div>
-{% if request.user.is_authenticated %}
-    <h2>{{ user.username }}<a href="{% url 'logout' %}"><button>logout</button></a></h2>
-    {% else %}
-    <a href="{% url 'login' %}"><button>login</button></a>
-    <a href="{% url 'register' %}"><button>signup</button></a>
-{% endif %}
+{% include 'partial/navbar.html' %}
+
 {% block content %}
     content here..
 {% endblock %}
 </body>
+<script>
+    function delalert() {
+        $(".alert-container").fadeOut(1000).delay(1000);
+    }
+
+    window.onload = (event) => {
+        setTimeout(delalert, 2000);
+    };
+</script>
 </html>
